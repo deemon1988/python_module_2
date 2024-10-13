@@ -4,51 +4,21 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 
 primes = []
 not_primes = []
-compare_list = []
+is_prime = False
+
 for i in numbers:
     if i == 1:
         print("Excluded value:", i)
         continue
-    compare_list.append(i)
-    for j in compare_list:
-        if i % j == 0 and i != j:
-            not_primes.append(i)
-            break
-        elif i == j:
+    for j in range(2,15):
+        if i == j:
+            is_prime = True
             primes.append(i)
             break
-        else:
-            continue
-
-print("Primes:", primes)
-print("Not Primes:", not_primes)
-
-# Простое число имеет только два делителя на 1 и само себя
-# Не простое число имеет больше 2х делителей, например 4 - 4:1, 4:4, 4:2
-
-is_prime = False
-new_primes = []
-new_not_primes = []
-list_ = []
-
-for i in numbers:
-    if i == 1:
-        print("Excluded value:", i)
-        continue
-    list_.append(i)
-    for j in list_:
-        if i % j == 0 and i != j:
+        elif i % j == 0:
             is_prime = False
+            not_primes.append(i)
             break
-        elif i == j:
-            is_prime = True
-            break
-        else:
-            is_prime = False
-    if is_prime:
-        new_primes.append(i)
-    else:
-        new_not_primes.append(i)
 
-print("Primes:",new_primes)
-print("Not Primes:" ,new_not_primes)
+print("Primes:",primes)
+print("Not Primes:" ,not_primes)
