@@ -12,13 +12,20 @@ for i in numbers:#range(numbers[left], numbers[right]):
         continue
     list_.append(i)
     for j in list_: #range(list_[0], list_[-1]):
-        if i % j != 0 or i == j:
-            if i not in prime:      # поставить перед проверкой деления
-                prime.append(i)
+        while j in list_:
+            if i % j == 0 and i != j:
+                if i not in not_prime:      # поставить перед проверкой деления
+                    not_prime.append(i)
+                    break
+                else:
+                    break
+            elif i == j:    # если равно добавлять в prime
+                break
+            else: break
             #continue
-        else:
-            not_prime.append(i)
-            break
+    if i not in prime and i not in not_prime:
+        prime.append(i)
+
 
 # Простое число имеет только два делителя на 1 и само себя
 # Не простое число имеет больше 2х делителей, например 4 - 4:1, 4:4, 4:2
