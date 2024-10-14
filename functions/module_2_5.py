@@ -1,30 +1,4 @@
-# Задача "Матрица воплоти":
-#
-# Напишите функцию get_matrix с тремя параметрами n, m и value, которая будет создавать матрицу(вложенный список) размерами n строк и m столбцов, заполненную значениями value и возвращать эту матрицу в качестве результата работы.
-#
-#
-# Пункты задачи:
-#
-# Объявите функцию get_matrix и напишите в ней параметры n, m и value.
-# Создайте пустой список matrix внутри функции get_matrix.
-# Напишите первый(внешний) цикл for для кол-ва строк матрицы, n повторов.
-# В первом цикле добавляйте пустой список в список matrix.
-# Напишите второй(внутренний) цикл for для кол-ва столбцов матрицы, m повторов.
-# Во втором цикле пополняйте ранее добавленный пустой список значениями value.
-# После всех циклов верните значение переменной matrix.
-# Выведите на экран(консоль) результат работы функции get_matrix.
-
-
-def get_matrix1(n, m ,value)->list:
-    matrix = []
-    for i in range(n):
-        q = []
-        for j in range(m):
-            q.append(value)
-        matrix.append(q)
-    return matrix
-
-print("matrix 1:",get_matrix1(3,3,8))
+# Домашняя работа по уроку "Функции в Python.Функция с параметром"
 
 def get_matrix(n, m ,value)->list:
     matrix = []
@@ -35,7 +9,10 @@ def get_matrix(n, m ,value)->list:
         matrix.append(q)
     return matrix
 
+result_1 = get_matrix(3,3,10)
+result_2 = get_matrix(5,5, 35)
+result_3 = get_matrix(3,2, 15)
 
-is_matrix = get_matrix(3,3,10)
-for k in is_matrix:
-    print(*k)
+print(result_1)
+print(result_2)
+print(result_3)
