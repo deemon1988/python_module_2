@@ -1,9 +1,8 @@
 import random
 
 list_numbers =[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-print(list_numbers)
-
 n = random.choice(list_numbers)
+
 result = []
 for a in range(0,10):
     res = []
