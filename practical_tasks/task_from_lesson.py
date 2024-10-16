@@ -9,36 +9,29 @@ for a in range(1, 21):
             continue
         summ = a + b
         if n % summ == 0:
-            pairs.append((a, b),)
+            pairs.append((a, b), )
 print(n, pairs)
 
 
-def unique_pairs(all_pairs):
-    sum_1 = 0
+def unique_pairs(all_pairs) -> list:
+    result_1 = all_pairs
+    print(result_1 is all_pairs)
     for k in all_pairs:
-        for q in k:
-            sum_1 += q
+        a1 = k[0]
+        b1 = k[1]
+        for g in all_pairs:
+            if k == g:
+                continue
+            a2 = g[1]
+            b2 = g[0]
+            if a1 == a2 and b1 == b2:
+                result_1.remove(g)
+    return result_1
 
 
-sums_1 = 0
-sums_2 = 0
-is_repeated = False
+result = unique_pairs(pairs)
 
-for k in pairs:
-    a1 = k[0]
-    b1 = k[1]
-    for g in pairs:
-        if k == g:
-            continue
-        a2 = g[1]
-        b2= g[0]
-        if a1 == a2 and b1 == b2:
-            is_repeated = True
-            pairs.remove(g)
+print("After remove:", result)
 
-print("After remove:", pairs)
-
-str_pairs = "".join(map(str, (*pairs,)))
+str_pairs = "".join(map(str, (*result,)))
 print(str_pairs)
-
-
