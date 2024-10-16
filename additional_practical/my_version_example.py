@@ -18,7 +18,6 @@ print(f"Кратные пары для числа {n}: {string}")
 pairs = "13141911923282183731746416515614713812911"
 print(string==pairs)
 
-
 tuple_ = (*pairs_numbers,)
 
 
