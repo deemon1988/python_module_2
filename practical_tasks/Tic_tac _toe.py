@@ -1,6 +1,30 @@
 #  поле для игры 3х3
 
+area = [['*', '*', '*'],['*', '*', '*'],['*', '*', '*']]
+for i in area:
+    print(*i)
+
 #  игроки ходят поочереди (реализовать через input)
+cross = []
+while len(cross) < 2:
+    row = int(input("Ходят крестики. Введите номер строки:"))
+    while row > 3 or row <= 0:
+        row = int(input("Введите номер строки от 1 до 3:"))
+    cross.append(row-1)
+    cell = int(input("Ходят крестики. Введите номер ячейки:"))
+    while cell > 3 or cell <= 0:
+        cell = int(input("Введите номер ячейки от 1 до 3:"))
+    cross.append(cell-1)
+
+#cross = [int(input("Ходят крестики. Введите номер строки:")), int(input("Ходят крестики. Введите номер ячейки:"))]
+
+print(cross)
+
+area[cross[0]][cross[1]] = 'X'
+for i in area:
+    print(*i)
+
+
 
 #  проверять что ячейка пустая, иначе сюда походить нельзя
 
